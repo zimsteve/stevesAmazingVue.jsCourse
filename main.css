@@ -61,7 +61,9 @@ nav a:last-child{
 nav.home .home,
 nav.projects .projects,
 nav.services .services,
-nav.contact .contact{
+nav.contact .contact,
+nav.friends .friends,
+nav.docs .docs{
 	background-color:#e35885;
 }
 

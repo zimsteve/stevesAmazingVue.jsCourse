@@ -6,6 +6,7 @@
     <title>Steve's Awesome Vue.js Course</title>
     <meta name="viewport" content="width=device-width,
     initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <link rel="stylesheet" type="text/css" href="main.css">
     <script src="vue.js"></script>
   </head>
   <body>
@@ -18,6 +19,8 @@
       <a href="#" class="projects" v-on:click="makeActive('projects')">Projects</a>
       <a href="#" class="services" v-on:click="makeActive('services')">Services</a>
       <a href="#" class="contact" v-on:click="makeActive('contact')">Contact</a>
+      <a href="#" class="friends" v-on:click="makeActive('friends')">Friends</a>
+      <a href="#" class="docs" v-on:click="makeActive('docs')">Docs</a>
     </nav>
     <!-- The mustache expression will be replaced with the value of "active". It will automatically update to reflect any changes. -->
     <p>You chose <b>{{active}}</b></p>
