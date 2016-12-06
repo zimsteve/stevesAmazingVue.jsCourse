@@ -8,27 +8,31 @@ var demo = new Vue({
   data: {
     	// Define the model properties. The view will loop through the services array and genreate a li element for every one of its items.
     services: [
-        	{
-        		name: 'Web Development',
-        		price: 450,
-        		active: true
-        	}, {
-        		name: 'Design',
-        		price: 300,
-        		active: false
-        	}, {
-        		name: 'Integration',
-        		price: 250,
-        		active: false
-        	}, {
-        		name: 'Training',
-        		price: 220,
-        		active: false
-        	}, {
-        		name: 'Teaching James Adulting',
-        		price: 300,
-        		active: false
-        	}
+      {
+        name: 'Web Development',
+        price: 450,
+        active: true
+      }, {
+        name: 'Teaching James Adulting',
+        price: 3000,
+        active: false
+      } , {
+        name: 'Design',
+        price: 300,
+        active: false
+      }, {
+        name: 'Integration',
+        price: 250,
+        active: false
+      }, {
+        name: 'Training',
+        price: 220,
+        active: false
+      }, {
+        name: 'Giving James Shit',
+        price: 0.50,
+        active: false
+      }
     ]
   },
   methods: {

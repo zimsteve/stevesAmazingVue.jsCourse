@@ -7,7 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <link rel="stylesheet" type="text/css" href="main.css">
     <script src="vue.js"></script>
-    <!--<script src="steveVue.js"></script>-->
   </head>
   <body>
     <!-- v-cloak hides any un-compiled data bindings until the Vue instance is ready. -->
@@ -25,59 +24,6 @@
         Total: <span>{{total() | currency}}</span>
       </div>
     </form>
-    <script>
-      // Define a custom filter called "currency".
-      Vue.filter('currency', function (value) {
-        return '$' + value.toFixed(2)
-      })
-      var demo = new Vue({
-        el: '#main',
-        data: {
-            // Define the model properties. The view will loop through the services array and genreate a li element for every one of its items.
-          services: [
-            {
-              name: 'Web Development',
-              price: 450,
-              active: true
-            }, {
-              name: 'Teaching James Adulting',
-              price: 3000,
-              active: false
-            } , {
-              name: 'Design',
-              price: 300,
-              active: false
-            }, {
-              name: 'Integration',
-              price: 250,
-              active: false
-            }, {
-              name: 'Training',
-              price: 220,
-              active: false
-            }, {
-              name: 'Giving James Shit',
-              price: 0.50,
-              active: false
-            }
-          ]
-        },
-        methods: {
-          toggleActive: function (s) {
-          s.active = !s.active
-          },
-          total: function () {
-            var total = 0
-
-            this.services.forEach(function (s) {
-              if (s.active) {
-                total += s.price
-              }
-            })
-            return total
-          }
-        }
-      })
-    </script>
+  <script src="steveVue.js"></script>
   </body>
 </html>
