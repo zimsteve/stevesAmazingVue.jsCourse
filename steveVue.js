@@ -4,7 +4,8 @@ new Vue({
   	title: 'Hello World!'
   },
   methods: {
-    changeTitle: (e) => {
+    // took me ages to reaslise that a sexy => wouldn't blady work here!! haha
+    changeTitle: function (e) {
       this.title = e.target.value
     }
   }
