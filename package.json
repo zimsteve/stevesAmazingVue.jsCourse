@@ -1,0 +1,14 @@
+{
+  "name": "steves-awesome-vue.js-course",
+  "version": "1.0.0",
+  "description": "Intro to amazing new framework called Vue.js, sit back and enjoy having your mind blown....",
+  "main": "steveVue.js",
+  "scripts": {
+    "test": "npm run test.js"
+  },
+  "author": "zimsteve",
+  "license": "MIT",
+  "dependencies": {
+    "vue": "^2.1.4"
+  }
+}
