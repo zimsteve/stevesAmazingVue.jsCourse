@@ -7,77 +7,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <link rel="stylesheet" type="text/css" href="main.css">
     <script src="vue.js"></script>
-    <!--<script src="steveVue.js"></script>-->
   </head>
   <body>
-    <!-- v-cloak hides any un-compiled data bindings until the Vue instance is ready. -->
     <form id="main" v-cloak>
-      <h1>Steve's Services</h1>
-      <ul>
-        <!-- Loop through the services array, assign a click handler, and set or remove the "active" css class if needed -->
-        <li v-for="service in services" v-on:click="toggleActive(service)" v-bind:class="{ 'active': service.active }">
-          <!-- Display the name and price for every entry in the array. Vue.js has a built in currency filter for formatting the price -->
-          {{service.name}} <span>{{service.price | currency}}</span>
-        </li>
-      </ul>
-      <div class="total">
-        <!-- Calculate the total price of all chosen services. Format it as currency. -->
-        Total: <span>{{total() | currency}}</span>
-      </div>
+    <div class="bar">
+      <!-- Create a binding between the searchString model and the text field -->
+      <input type="text" v-model="searchString" placeholder="Enter your search terms" />
+    </div>
+    <ul>
+      <!-- Render a li element for every entry in the computed filteredArticles array. -->
+      <li v-for="article in filteredArticles">
+          <a v-bind:href="article.url"><img v-bind:src="article.image" /></a>
+          <p>{{article.title}}</p>
+      </li>
+    </ul>
     </form>
-    <script>
-      // Define a custom filter called "currency".
-      Vue.filter('currency', function (value) {
-        return '$' + value.toFixed(2)
-      })
-      var demo = new Vue({
-        el: '#main',
-        data: {
-            // Define the model properties. The view will loop through the services array and genreate a li element for every one of its items.
-          services: [
-            {
-              name: 'Web Development',
-              price: 450,
-              active: true
-            }, {
-              name: 'Teaching James Adulting',
-              price: 3000,
-              active: false
-            } , {
-              name: 'Design',
-              price: 300,
-              active: false
-            }, {
-              name: 'Integration',
-              price: 250,
-              active: false
-            }, {
-              name: 'Training',
-              price: 220,
-              active: false
-            }, {
-              name: 'Giving James Shit',
-              price: 0.50,
-              active: false
-            }
-          ]
-        },
-        methods: {
-          toggleActive: function (s) {
-          s.active = !s.active
-          },
-          total: function () {
-            var total = 0
-
-            this.services.forEach(function (s) {
-              if (s.active) {
-                total += s.price
-              }
-            })
-            return total
-          }
-        }
-      })
-    </script>
+  <script src="steveVue.js"></script>
   </body>
 </html>
